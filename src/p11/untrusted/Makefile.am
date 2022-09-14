@@ -54,7 +54,7 @@ endif
 AM_CXXFLAGS = -D_FORTIFY_SOURCE=2 -m64 -std=c++11 -fpie -fpic -fstack-protector -Wformat -Wformat-security -fexceptions -fno-strict-overflow -fno-delete-null-pointer-checks -fwrapv -Wreturn-type -Werror=return-type
 AM_CFLAGS = -D_FORTIFY_SOURCE=2 -m64 -std=c11 -fvisibility=hidden -fpie -fpic -fstack-protector -Wformat -Wformat-security -fexceptions -fno-strict-overflow -fno-delete-null-pointer-checks -fwrapv -Wreturn-type -Werror=return-type
 
-AM_LDFLAGS = -L$(SGXSSLDIR)/lib64 -lsgx_usgxssl -L$(SGXSDKDIR)/lib64 $(DCAP_LIB) -lsgx_urts -lsgx_uprotected_fs \
+AM_LDFLAGS = -L$(SGXSSLDIR)/lib64 -lsgx_usgxssl -L$(SGXSDKDIR)/lib64 $(DCAP_LIB) -lsgx_urts_sim -lsgx_uae_service_sim -lsgx_uprotected_fs \
              -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now -pie -export-dynamic -module -shared
 
 lib_LTLIBRARIES = libp11sgx.la
